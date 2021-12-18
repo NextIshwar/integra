@@ -1,5 +1,3 @@
-import 'package:bed_availabilities/model/error_model.dart';
-
 ///[CovidDataModel] is the data model class that is used while converting json
 ///to dart model
 class CovidDataModel {
@@ -17,7 +15,7 @@ class CovidDataModel {
     });
     dataValues = [];
     json['data'].forEach((e) {
-      dataValues!.add(e);
+      dataValues!.add(e.toList());
     });
   }
 }

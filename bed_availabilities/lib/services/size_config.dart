@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+///[SizeConfig] class's init method initialize MediaQuery
+///
+///This class is used to get responsive height and width
 class SizeConfig {
   static late MediaQueryData _mediaQueryData;
   static late double screenWidth,
@@ -17,7 +20,7 @@ class SizeConfig {
     _mediaQueryData = MediaQuery.of(context);
     screenWidth = _mediaQueryData.size.width;
     screenHeight = _mediaQueryData.size.height;
-
+    //taking reference mobile height and mobile width
     refMobileHeight = 760;
     refMobileWidth = 360;
 
@@ -64,10 +67,18 @@ class SizeConfig {
   }
 }
 
+///[SizeUtils] extension method have three methods in it.
+///
+/// - toWidth
+/// - toHeight
+/// - toFont
 extension SizeUtils on num {
+  ///[toWidth] method takes an integer value and returns responsive mobile width
   double get toWidth => SizeConfig.getMobileWidthRatio(toDouble());
 
+  ///[toHeight] method takes an integer value and returns responsive mobile height
   double get toHeight => SizeConfig.getMobileHeightRatio(toDouble());
 
+  ///[toFont] method takes an integer value and returns responsive font
   double get toFont => SizeConfig.getMobileFontRatio(toDouble());
 }

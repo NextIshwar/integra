@@ -9,7 +9,8 @@ class CovidBloc extends Bloc<CovidEvents, CovidStates> {
     on<CovidEvents>((event, emit) async {
       if (event is LoadDataEvent) {
         emit(LoadingState());
-        CovidDataModel _covidDataModel = await APICall().getData();
+        CovidDataModel _covidDataModel = await APICall()
+            .getData(); //Calling getData method to load json data
         emit(SuccessState(_covidDataModel));
       } else if (event is CloseEvent) {
         emit(InitialState());

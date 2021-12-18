@@ -80,7 +80,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
-///[_getMainContainer] method returns a widget to display based on the 
+///[_getMainContainer] method returns a widget to display based on the
 ///CovidState
 Widget _getMainContainer(CovidStates state) {
   return state is LoadingState
